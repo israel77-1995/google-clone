@@ -1,11 +1,14 @@
-import React from "react";
+import SideButton from "./SideButton.jsx"
 
 const SideBar = () => {
-  return(
-    <aside>
-        pass
-    </aside>
-  );   
+return (
+  <aside>
+    <SideButton icon="Lightbulb" name="Notes" />
+    <SideButton icon="Notifications" name="Reminders" />
+  </aside>
+);
 }
+
+
 
 export default SideBar;
