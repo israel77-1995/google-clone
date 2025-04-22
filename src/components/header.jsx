@@ -9,9 +9,10 @@ const Header = () => {
         <header>
 
 
-            <span className="material-symbols-outlined">menu</span>
+            
             <section>
-                <img src={Lightbulb} alt="" />
+
+                <span className="material-symbols-outlined">menu</span>
                 <a>
                     
                     <img src ="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" />

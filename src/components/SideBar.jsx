@@ -4,7 +4,7 @@ const SideBar = () => {
 return (
   <aside>
     <SideButton icon="Lightbulb" name="Notes" />
-    <SideButton icon="Notifications" name="Reminders" />
+    <SideButton icon="Notification" name="Reminders" />
   </aside>
 );
 }
