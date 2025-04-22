@@ -5,6 +5,9 @@ return (
   <aside>
     <SideButton icon="Lightbulb" name="Notes" />
     <SideButton icon="Notification" name="Reminders" />
+    <SideButton icon="Label" name="Labels" />
+    <SideButton icon="Archive" name="Archive" />
+    <SideButton icon="Trash" name="Trash" />
   </aside>
 );
 }
