@@ -8,13 +8,13 @@ const Header = () => {
     return(
         <header>
 
-
             <span className="material-symbols-outlined">menu</span>
+            
             <section>
-                <img src={Lightbulb} alt="" />
+                
                 <a>
                     
-                    <img src ="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" />
+                    <img src ="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" alt="google-keep-logo"/>
                     <span>Keep</span>
                 </a>
 
