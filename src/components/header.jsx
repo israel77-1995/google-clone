@@ -1,32 +1,31 @@
 import React from "react";
 import { ActionArea } from "./ActionArea";
-import SearchBar from "./SearchBar"; 
+import SearchBar from "./SearchBar";
 
-import Lightbulb from "../assets/light-logo.svg";
-
-const Header = () => {
+const Header = ({ onMenuClick, menuActive }) => {
     return(
         <header>
 
-            <span className="material-symbols-outlined">menu</span>
-            
-            <section>
-                
+            <div className="header-brand-container">
+                <span
+                    className={`material-symbols-outlined menu-icon ${menuActive ? 'menu-active' : ''}`}
+                    onClick={onMenuClick}
+                >
+                    menu
+                </span>
+
                 <a>
-                    
-                    <img src ="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" alt="google-keep-logo"/>
+                    <img src="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" alt="google-keep-logo"/>
                     <span>Keep</span>
                 </a>
+            </div>
+            <section>
+                <SearchBar />
+            </section>
+            <section>
+                <ActionArea />
+            </section>
 
-               
-            </section>
-            <section>
-                <SearchBar />            
-            </section>
-            <section>
-                <ActionArea />            
-            </section>
-            
         </header>
     );
 };
