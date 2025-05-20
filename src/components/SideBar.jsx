@@ -1,14 +1,37 @@
-import SideButton from "./SideButton.jsx"
-
 const SideBar = ({ expanded }) => {
   return (
     <aside className={`sidebar ${expanded ? 'expanded' : 'collapsed'}`}>
       <div className="sidebar-buttons">
-        <SideButton icon="lightbulb" name="Notes" expanded={expanded} />
-        <SideButton icon="notifications" name="Reminders" expanded={expanded} />
-        <SideButton icon="label" name="Labels" expanded={expanded} />
-        <SideButton icon="archive" name="Archive" expanded={expanded} />
-        <SideButton icon="delete" name="Trash" expanded={expanded} />
+        <div className="sidebar-button active">
+          <div className="icon-wrapper">
+            <span className="material-symbols-outlined active">lightbulb</span>
+          </div>
+          {expanded && <span className="button-name">Notes</span>}
+        </div>
+        <div className="sidebar-button">
+          <div className="icon-wrapper">
+            <span className="material-symbols-outlined">notifications</span>
+          </div>
+          {expanded && <span className="button-name">Reminders</span>}
+        </div>
+        <div className="sidebar-button">
+          <div className="icon-wrapper">
+            <span className="material-symbols-outlined">label</span>
+          </div>
+          {expanded && <span className="button-name">Labels</span>}
+        </div>
+        <div className="sidebar-button">
+          <div className="icon-wrapper">
+            <span className="material-symbols-outlined">archive</span>
+          </div>
+          {expanded && <span className="button-name">Archive</span>}
+        </div>
+        <div className="sidebar-button">
+          <div className="icon-wrapper">
+            <span className="material-symbols-outlined">delete</span>
+          </div>
+          {expanded && <span className="button-name">Trash</span>}
+        </div>
       </div>
     </aside>
   );

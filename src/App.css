@@ -1,3 +1,4 @@
+
 /* Google Keep Clone Styles */
 
 /* Global Styles */
@@ -105,31 +106,80 @@ header a span {
 .sidebar-buttons {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0 12px;
 }
 
 .sidebar-button {
   display: flex;
   align-items: center;
-  padding: 12px 24px;
   cursor: pointer;
   border-radius: 0 25px 25px 0;
-  margin-right: 8px;
+  margin: 4px 0;
   white-space: nowrap;
+  height: 48px;
+  position: relative;
+  width: 100%;
+  padding-left: 12px;
 }
 
 .sidebar-button:hover {
   background-color: #f1f3f4;
 }
 
-.sidebar-button .material-symbols-outlined {
-  margin-right: 20px;
-  color: #5f6368;
+/* Icon wrapper to keep icons fixed */
+.sidebar-button .icon-wrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
+.sidebar-button .material-symbols-outlined {
+  color: #5f6368;
+  font-size: 24px;
+}
+
+/* Active sidebar button styles */
+.sidebar-button.active {
+  background-color: #feefc3;
+}
+
+.sidebar-button .material-symbols-outlined.active {
+  color: black;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+
+/* Button name styling */
 .button-name {
   font-size: 14px;
   color: #202124;
-  transition: opacity 0.2s ease;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+/* Collapsed sidebar styling */
+.sidebar.collapsed {
+  width: 72px;
+}
+
+.sidebar.collapsed .sidebar-buttons {
+  align-items: center;
+  padding: 0;
+}
+
+.sidebar.collapsed .sidebar-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 0;
+  justify-content: center;
 }
 
 /* Notes Container */
