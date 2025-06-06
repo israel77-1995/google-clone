@@ -81,7 +81,12 @@ header a span {
 
 /* Header brand container styling */
 .header-brand-container {
-  display: flex;
+  display: flex;  
+
+
+
+
+  
   align-items: center;
   width: 202px;
   padding-right: 30px; /* Add padding to the right side only */
@@ -92,92 +97,100 @@ header a span {
 .sidebar {
   transition: width 0.3s ease;
   width: 72px; /* Default collapsed width */
-  padding: 8px 0;
   height: calc(100vh - 64px);
-  overflow-x: hidden;
+  overflow: hidden;
+  border-right: 1px solid #e0e0e0;
+  position: relative;
 }
 
 .sidebar.expanded {
   width: 280px; /* Expanded width */
 }
 
+/* Fixed icon zone - always 72px wide */
 .sidebar-buttons {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-right: 12px; /* Only right padding, no left */
+  position: relative;
 }
 
 .sidebar-button {
   display: flex;
   align-items: center;
   cursor: pointer;
-  border-radius: 0 25px 25px 0;
-  margin: 0; /* Remove vertical space between buttons */
-  white-space: nowrap;
   height: 48px;
   position: relative;
-  width: 100%;
-  padding-left: 12px;
+  margin: 4px 0;
 }
 
-.sidebar-button:hover {
-  background-color: #f1f3f4;
-}
-
-/* Icon wrapper to keep icons fixed */
+/* Fixed icon area - never moves */
 .sidebar-button .icon-wrapper {
+  position: absolute;
+  left: 12px;
+  top: 0;
   width: 48px;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
+  z-index: 2;
 }
 
+/* Expandable background area */
+.sidebar-button .button-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.sidebar.expanded .sidebar-button .button-background {
+  width: 256px;
+  border-radius: 0 25px 25px 0;
+  margin-right: 8px;
+}
+
+.sidebar-button:hover .button-background {
+  background-color: #f1f3f4;
+}
+
+/* Text area - only visible when expanded */
+.sidebar-button .button-name {
+  position: absolute;
+  left: 72px;
+  font-size: 14px;
+  color: #202124;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.sidebar.expanded .sidebar-button .button-name {
+  opacity: 1;
+}
+
+/* Icon styling */
 .sidebar-button .material-symbols-outlined {
   color: #5f6368;
   font-size: 24px;
 }
 
-/* Active sidebar button styles */
-.sidebar-button.active {
+/* Active button styles */
+.sidebar-button.active .button-background {
   background-color: #feefc3;
 }
 
-.sidebar-button .material-symbols-outlined.active {
+.sidebar-button.active .material-symbols-outlined {
   color: black;
   font-variation-settings:
   'FILL' 1,
   'wght' 400,
   'GRAD' 0,
   'opsz' 24;
-}
-
-/* Button name styling */
-.button-name {
-  font-size: 14px;
-  color: #202124;
-  margin-left: 12px;
-  white-space: nowrap;
-}
-
-/* Collapsed sidebar styling */
-.sidebar.collapsed {
-  width: 72px;
-}
-
-.sidebar.collapsed .sidebar-buttons {
-  align-items: center;
-  padding: 0;
-}
-
-.sidebar.collapsed .sidebar-button {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  padding: 0;
-  justify-content: center;
 }
 
 /* Notes Container */

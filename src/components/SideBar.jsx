@@ -3,34 +3,39 @@ const SideBar = ({ expanded }) => {
     <aside className={`sidebar ${expanded ? 'expanded' : 'collapsed'}`}>
       <div className="sidebar-buttons">
         <div className="sidebar-button active">
+          <div className="button-background"></div>
           <div className="icon-wrapper">
             <span className="material-symbols-outlined active">lightbulb</span>
           </div>
-          {expanded && <span className="button-name">Notes</span>}
+          <span className="button-name">Notes</span>
         </div>
         <div className="sidebar-button">
+          <div className="button-background"></div>
           <div className="icon-wrapper">
             <span className="material-symbols-outlined">notifications</span>
           </div>
-          {expanded && <span className="button-name">Reminders</span>}
+          <span className="button-name">Reminders</span>
         </div>
         <div className="sidebar-button">
+          <div className="button-background"></div>
           <div className="icon-wrapper">
             <span className="material-symbols-outlined">label</span>
           </div>
-          {expanded && <span className="button-name">Labels</span>}
+          <span className="button-name">Labels</span>
         </div>
         <div className="sidebar-button">
+          <div className="button-background"></div>
           <div className="icon-wrapper">
             <span className="material-symbols-outlined">archive</span>
           </div>
-          {expanded && <span className="button-name">Archive</span>}
+          <span className="button-name">Archive</span>
         </div>
         <div className="sidebar-button">
+          <div className="button-background"></div>
           <div className="icon-wrapper">
             <span className="material-symbols-outlined">delete</span>
           </div>
-          {expanded && <span className="button-name">Trash</span>}
+          <span className="button-name">Trash</span>
         </div>
       </div>
     </aside>
