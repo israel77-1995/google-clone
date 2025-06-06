@@ -82,11 +82,6 @@ header a span {
 /* Header brand container styling */
 .header-brand-container {
   display: flex;  
-
-
-
-
-  
   align-items: center;
   width: 202px;
   padding-right: 30px; /* Add padding to the right side only */
@@ -95,12 +90,13 @@ header a span {
 
 /* Sidebar Styles */
 .sidebar {
-  transition: width 0.3s ease;
+  transition: width 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
   width: 72px; /* Default collapsed width */
-  height: calc(100vh - 64px);
+  height: calc(100vh - 64px - 16px); /* Account for header + top margin */
   overflow: hidden;
-  border-right: 1px solid #e0e0e0;
+  border-right: none;
   position: relative;
+  margin-top: 10px; /* Add space between header and sidebar */
 }
 
 .sidebar.expanded {
@@ -120,7 +116,7 @@ header a span {
   cursor: pointer;
   height: 48px;
   position: relative;
-  margin: 4px 0;
+  margin: 0px 0;
 }
 
 /* Fixed icon area - never moves */
@@ -139,16 +135,17 @@ header a span {
 /* Expandable background area */
 .sidebar-button .button-background {
   position: absolute;
-  left: 0;
+  left: 12px;
   top: 0;
   height: 48px;
   width: 48px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .sidebar.expanded .sidebar-button .button-background {
-  width: 256px;
+  left: 0;
+  width: 280px;
   border-radius: 0 25px 25px 0;
   margin-right: 8px;
 }
@@ -165,7 +162,7 @@ header a span {
   color: #202124;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
   z-index: 1;
 }
 
@@ -200,6 +197,7 @@ header a span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 16px; /* Add space between header and main content */
 }
 
 /* Notes List */
